@@ -4,21 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95ca3985-f98e-4be9-8aaf-2ac48233d30f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dino/tui/TUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dino/world/Cage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dino/world/Dino.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dino/world/LandCage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dino/world/TRex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dino/world/Trophic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dino/world/World.java" afterDir="false" />
+    <list default="true" id="95ca3985-f98e-4be9-8aaf-2ac48233d30f" name="Changes" comment="initial">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main/Calculate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dino/world/WaterCage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dino/world/WaterDino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dino/tui/TUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dino/tui/TUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dino/world/Cage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dino/world/Cage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dino/world/Dino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dino/world/Dino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dino/world/LandCage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dino/world/LandCage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dino/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dino/world/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +34,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2pR9Rb22Vqy1RRahOMydrvyiNn5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -49,6 +47,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -96,12 +95,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732718015156</updated>
-      <workItem from="1732718016173" duration="6730000" />
+      <workItem from="1732718016173" duration="7069000" />
+      <workItem from="1733123943548" duration="14916000" />
     </task>
+    <task id="LOCAL-00001" summary="initial">
+      <option name="closed" value="true" />
+      <created>1732725374272</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732725374272</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -110,16 +123,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dino/tui/TUI.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dino/tui/TUI.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

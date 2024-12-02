@@ -8,14 +8,16 @@ public abstract class Cage {
     public short space;
     Trophic foodType;
     public int food = 0;
-    public int maxFood;
+    public long price = 0;
 
-    public Cage(short space, int maxFood, String name) {
+    public Cage(short space, String name) {
         this.space = space;
-        this.maxFood = maxFood;
         this.name = name;
     }
 
+    public String toString(){
+        return name + " | " + space + " | " + foodType + " | " + food;
+    }
 
 
 }

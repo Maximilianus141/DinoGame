@@ -1,7 +1,10 @@
 package dino.world;
 
+import java.awt.Color;
+
 public abstract class Dino {
     public String name;
+    static public long price;
 
     double weight;
     double maxWeight;
@@ -14,6 +17,8 @@ public abstract class Dino {
 
     public int hunger = 100;
     public int maxHunger = 100;
+
+    public Color color;
 
     boolean carnivore;
     boolean herbivore;
@@ -30,6 +35,5 @@ public abstract class Dino {
             default -> throw new IllegalStateException("Unexpected value: " + trophic);
         }
     }
-
 
 }

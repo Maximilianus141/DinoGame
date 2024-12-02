@@ -7,6 +7,7 @@ public class TRex extends LandDino{
         maxHeight = 5;
         maxSpeed = 200;
         maxWeight = 4000;
+        price = 0;
     }
 
 }
