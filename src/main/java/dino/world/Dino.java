@@ -35,5 +35,8 @@ public abstract class Dino {
             default -> throw new IllegalStateException("Unexpected value: " + trophic);
         }
     }
+    public String toString(){
+        return name + "|" + hunger + "/" + maxHunger + "|" + speed;
+    }
 
 }

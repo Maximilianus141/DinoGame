@@ -9,7 +9,7 @@ public class WaterCage extends Cage {
         waterDinos.add(dino);
         dinos.add(dino);
     }
-    public WaterCage(short space, String name) {
-        super(space, name);
+    public WaterCage(short space, String name, int maxFood, int id) {
+        super(space, name, maxFood, id);
     }
 }

@@ -9,7 +9,7 @@ public class LandCage extends Cage {
         landDinos.add(dino);
         dinos.add(dino);
     }
-    public LandCage(short space, String name) {
-        super(space, name);
+    public LandCage(short space, String name, int maxFood, int id) {
+        super(space, name,maxFood, id);
     }
 }

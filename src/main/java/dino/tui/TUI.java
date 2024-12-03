@@ -3,6 +3,7 @@ package dino.tui;
 import Main.Main;
 import dino.world.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TUI {
@@ -19,9 +20,9 @@ public class TUI {
                 cageShop();
             }
         }
+        dinoShop();
+
     }
-
-
 
 
     private String makeStringDesiredLength(String stringToChange, int desiredLength) {
@@ -36,20 +37,20 @@ public class TUI {
         return stringToChange;
     }
 
-    public String getTable(String[][] table){
+    public String getTable(String[][] table) {
 
         int[] biggestStrings = new int[table[0].length];
 
 
         for (int i = 0; i < table.length; i++) {
-                for (int j = 0; j < table[i].length; j++) {
-                    if (table[i][j].length() > biggestStrings[j]) {
-                        biggestStrings[j] = table[i][j].length() + 2;
-                    }
-                    if (table[i][j].charAt(0) != ' ') {
-                        table[i][j] = " " + table[i][j];
-                    }
+            for (int j = 0; j < table[i].length; j++) {
+                if (table[i][j].length() > biggestStrings[j]) {
+                    biggestStrings[j] = table[i][j].length() + 2;
                 }
+                if (table[i][j].charAt(0) != ' ') {
+                    table[i][j] = " " + table[i][j];
+                }
+            }
 
         }
         for (int i = 0; i < table.length; i++) {
@@ -68,13 +69,13 @@ public class TUI {
         sb.append(top);
         for (int i = 0; i < table.length; i++) {
             for (int j = 0; j < table[i].length; j++) {
-                if(j == 0){
+                if (j == 0) {
                     sb.append("|");
                 }
                 sb.append(table[i][j] + "|");
             }
             sb.append("\n");
-            if (i == 0){
+            if (i == 0) {
                 sb.append(top);
             }
         }
@@ -86,17 +87,25 @@ public class TUI {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the cage shop!");
         System.out.println(getTable(new String[][]{
-                {"nr.", "Cage name" ,"Cage type", "Space", "price"},
-                {"1", "Simple Paddock", "Land cage", "3", "0$"}
+                {"nr.", "Cage name", "Cage type", "Space", "price"},
+                {"1", "Simple paddock", "Land cage", "3", "0$"},
+                {"2", "Simple aquarium", "Water cage", "3", "0$"}
         }));
         String input = scanner.nextLine();
         switch (input) {
             case "1":
-                world.buyCage("LandCage", "Simple paddock", 0L, (short) 3);
+                world.buyCage(Category.LAND, "Simple paddock",100, 0L, (short) 3);
+                break;
+            case "2":
+                world.buyCage(Category.WATER, "Simple aquarium",100, 0L, (short) 3);
+                break;
+            default:
+                System.out.println("No Cage bought!");
+                break;
         }
     }
 
-    public void dinoShop(){
+    public void dinoShop() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the dino shop!");
         System.out.println(getTable(new String[][]{
@@ -107,33 +116,57 @@ public class TUI {
         String input = scanner.nextLine();
         switch (input) {
             case "1":
-                if (world.money >= TRex.price){
+                if (world.money >= TRex.price) {
                     System.out.println("Which cage do you want to add the Dino too?");
-                    displayCages(Category.LAND);
+                    displayCages(true).addDino(new TRex("T-Rex"));
                 }
+                break;
+            default:
+                System.out.println("No Dino bought!");
         }
     }
-        private Cage displayCages(Category category, boolean bool) {
+
+    public void displayCage(Cage cage) {
+        ArrayList<String[]> dinos = new ArrayList<>();
+        dinos.add(new String[]{"Name", "Hunger", "Speed"});
+        for (Dino dino : cage.dinos){
+            dinos.add(dino.toString().split("\\|"));
+        }
+        String[][] table = new String[dinos.size()][dinos.getFirst().length];
+        getTable(dinos.toArray(new String[dinos.size()][]));
+    }
+
+    private Cage displayCages(boolean bool) {
         Scanner scanner = new Scanner(System.in);
-        String world = this.world.toString(category);
+        String world = this.world.toString();
+        if (world.isEmpty()) {
+            System.out.println("Something went wrong!");
+        }
         String[] cages = world.split("\n");
         String[][] table = new String[cages.length + 1][cages[0].split("\\|").length];
-        table[0][0] = "Name";
-        table[0][1] = "Space";
-        table[0][2] = "Food type";
-        for (int i = 1; i < cages.length; i++) {
+        table[0][0] = "Id";
+        table[0][1] = "Name";
+        table[0][2] = "Space";
+        table[0][3] = "Food";
+        table[0][4] = "Food type";
+
+
+        for (int i = 0; i < cages.length; i++) {
+            table[i + 1][0] = cages[i].split("\\|")[cages[i].split("\\|").length - 1];
             for (int j = 0; j < cages[i].split("\\|").length; j++) {
-                table[i][j] = cages[i].split("\\|")[j];
+                table[i + 1][j] = cages[i].split("\\|")[j];
             }
         }
         System.out.println(getTable(table));
         if (bool) {
             System.out.println("Which cage do you want to add the Dino too?");
             int input = scanner.nextInt();
-
+            return this.world.getCage(input);
+        } else {
+            return null;
         }
-
     }
+
 
 }
 
