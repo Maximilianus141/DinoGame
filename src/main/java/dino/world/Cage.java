@@ -10,7 +10,6 @@ public abstract class Cage {
     Trophic foodType = Trophic.CARNIVORE;
     public int food = 0;
     public int maxFood;
-    public long price = 0;
 
     public Cage(short space, String name, int maxFood, int id) {
         this.space = space;
@@ -23,10 +22,7 @@ public abstract class Cage {
         return id + " | " + name + " | " + space + " | " + food + "/" + maxFood + " | " + foodType;
     }
 
-    public void addDino(Dino dino){
-        dinos.add(dino);
-        System.out.println("Dino succesfully added to the cage!");
-    }
+    abstract public boolean addDino(Dino dino);
 
 
 }
