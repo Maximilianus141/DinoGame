@@ -1,6 +1,5 @@
 package dino.world;
 
-import java.util.ArrayList;
 
 public class LandCage extends Cage {
 

@@ -12,6 +12,11 @@ public class Thread implements Runnable {
 		world.money += world.moneyIncrement;
 	}
 
+	public void skipDay()
+	{
+		time = ((world.day + 1) * 6000) - 1;
+	}
+
 	public Thread(World world)
 	{
 		this.world = world;
@@ -24,10 +29,6 @@ public class Thread implements Runnable {
 		if (time % 6000 == 0) {
 			world.day++;
 			updateMoney();
-		}
-		try {
-			java.lang.Thread.sleep(50);
-		} catch (Exception _) {
 		}
 	}
 }

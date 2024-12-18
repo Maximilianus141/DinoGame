@@ -1,4 +1,5 @@
 import dino.tui.TUI;
+import dino.world.Thread;
 import dino.world.World;
 
 import java.util.concurrent.Executors;
@@ -17,8 +18,10 @@ public class Main {
 
 	public static void main(String[] args)
 	{
+		dino.world.Thread mainThread = new dino.world.Thread(world);
 		ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
-		executor.scheduleAtFixedRate(new dino.world.Thread(world), 0, 50, TimeUnit.MILLISECONDS);
+		executor.scheduleAtFixedRate(mainThread , 0, 50, TimeUnit.MILLISECONDS);
 		TUI tui = new TUI(world);
+		mainThread.skipDay();
 	}
 }
